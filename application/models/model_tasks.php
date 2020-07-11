@@ -8,7 +8,7 @@ class Model_Tasks extends Model {
 	}
 
 	public function createTask($user, $email, $body) {
-		$sql = "INSERT INTO task (user, email, body, status) VALUES (?, ?, ?, 0)";
+		$sql = "INSERT INTO task (user, email, body, status, edit_administrator) VALUES (?, ?, ?, 0, 0)";
 		$sth = $this->conn->prepare($sql);
 		$sth->execute(array($user, $email, $body));
 	}
